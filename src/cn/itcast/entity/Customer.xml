@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+	<!-- 1.配置类和表对应的class标签 name:实体类全路径 table:数据库表名称 -->
+	<class name="cn.itcast.entity.Customer" table="t_Customer">
+		<id column="cid" name="cid">
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="custName" />
+		<property generated="never" lazy="false" name="custLevel" />
+		<property generated="never" lazy="false" name="custSource" />
+		<property generated="never" lazy="false" name="custPhone" />
+		<property generated="never" lazy="false" name="custMobile" />
+	<!-- 表示客户所有联系人 -->
+	<!-- inverse 放弃关系维护，避免客户修改操作之后联系人外键丢失 -->
+	<!-- cascade保证级联删除 -->
+	<set name="setLinkMan" inverse="true" cascade="delete">
+	<key column="clid"></key>
+	<one-to-many class="cn.itcast.entity.LinkMan"/>
+	</set>
+	<set name="setCusVisit" >
+	<key column="cvid"></key>
+	<one-to-many class="cn.itcast.entity.Visit"/>
+	</set>
+	</class>
+</hibernate-mapping>

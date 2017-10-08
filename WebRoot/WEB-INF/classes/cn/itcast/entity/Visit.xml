@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+	<!-- 1.配置类和表对应的class标签 name:实体类全路径 table:数据库表名称 -->
+	<class name="cn.itcast.entity.Visit" table="t_visit">
+		<id column="vid" name="vid">
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="vaddress" />
+		<property generated="never" lazy="false" name="vcontent" />
+	 <!-- 拜访所属客户 -->	
+ <many-to-one name="customer" class="cn.itcast.entity.Customer" column="cvid"></many-to-one>
+ <!-- 拜访所属用户 -->
+  <many-to-one name="user" class="cn.itcast.entity.User" column="uvid"></many-to-one>
+	</class>
+</hibernate-mapping>

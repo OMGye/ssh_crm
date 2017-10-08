@@ -1,0 +1,17 @@
+{
+   "menus" : [{"icon" : "icon-sys","menuid" : "1","menuname" : "客户管理","url" : "","menus" : [
+                 {"icon" : "icon-log","menuid" : "1_1","menuname" : "客户列表","url" : "views/customer.html"
+                 },
+                 {"icon" : "icon-log","menuid" : "1_1","menuname" : "客户拜访","url" : "views/customer.html"
+                 }
+                ]
+               },
+               {"icon" : "icon-sys","menuid" : "1","menuname" : "联系人管理","url" : "","menus" : [
+                 {"icon" : "icon-log","menuid" : "1_1","menuname" : "联系人列表","url" : "views/customer.html"
+                 },
+                 {"icon" : "icon-log","menuid" : "1_1","menuname" : "添加联系人","url" : "views/customer.html"
+                 }
+                ]
+               }
+             ]
+}

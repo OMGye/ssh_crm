@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+	<!-- 1.配置类和表对应的class标签 name:实体类全路径 table:数据库表名称 -->
+	<class name="cn.itcast.entity.User" table="t_User">
+		<id column="uid" name="uid">
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="username" />
+		<property generated="never" lazy="false" name="password" />
+		<property generated="never" lazy="false" name="address" />
+		<set name="setUserVisit" >
+	    <key column="uvid"></key>
+	    <one-to-many class="cn.itcast.entity.Visit"/>
+	    </set>
+	</class>
+</hibernate-mapping>

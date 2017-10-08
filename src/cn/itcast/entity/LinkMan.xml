@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+	<!-- 1.配置类和表对应的class标签 name:实体类全路径 table:数据库表名称 -->
+	<class name="cn.itcast.entity.LinkMan" table="t_linkman">
+		<id column="linkid" name="linkid">
+			<generator class="native" />
+		</id>
+		<property generated="never" lazy="false" name="lkmName" />
+		<property generated="never" lazy="false" name="lkmGender" />
+		<property generated="never" lazy="false" name="lkmPhone" />
+		<property generated="never" lazy="false" name="lkmMobile" />
+	 <!-- 联系人所属客户 -->
+	 <many-to-one name="customer" class="cn.itcast.entity.Customer" column="clid"></many-to-one>
+	</class>
+</hibernate-mapping>
